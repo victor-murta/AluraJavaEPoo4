@@ -1,8 +1,8 @@
 //double saldo == atributo
 
-public class Conta {
+public abstract class Conta {
     // não pode ser lido nem modificado além da classe Conta
-    private double saldo ;
+    protected double saldo ;
     private int agencia  = 1;
     private int numero;
     private Cliente titular;
@@ -17,10 +17,7 @@ public class Conta {
 
     }
 
-    public void deposita(double valor){
-        this.saldo += valor;
-        System.out.println("Depositado: " + this.saldo);
-    }
+    public abstract void deposita(double valor);
 
     public boolean sacar(double valor){
         if ( this.saldo >= valor){
