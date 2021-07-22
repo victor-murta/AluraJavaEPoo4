@@ -25,7 +25,7 @@ public abstract class Conta {
     public void sacar(double valor) throws SaldoInsuficienteException {
         if ( this.saldo < valor){
             // erro
-            throw new SaldoInsuficienteException("Saldo: "+this.saldo + ", Valor: " + valor);
+            throw new SaldoInsuficienteException("Nome: " + getTitular().getNome() + "Conta: " + getAgencia() + "Saldo: "+this.saldo + ", Valor: " + valor );
 
         }
 
@@ -60,6 +60,8 @@ public abstract class Conta {
     public Cliente getTitular() {
         return titular;
     }
+
+
 
     public static int getTotal() {
         return total;
